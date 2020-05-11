@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {NgForm} from '@angular/forms';
+import { AuthService } from '../_services/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -12,17 +14,42 @@ export class NavbarComponent implements OnInit {
   lists = 'Lists';
   messages = 'Messages';
   login = 'Login';
+  welcomeUser = 'Welcome ';
+  editProfile = 'Edit Profile';
+  logOut = 'Logout';
 
   model: any = {};
 
 
-  constructor() {   }
+  constructor(private authService: AuthService) {   }
 
   ngOnInit() {
   }
 
   submitLogin() {
-    console.log('\n' + this.model);
+    this.authService.loginUser(this.model).subscribe(
+      next => {
+        if (!this.welcomeUser.includes(this.model.username)) {
+          this.welcomeUser = this.welcomeUser + this.model.username;
+        }
+        console.log('logged in successfully');
+      },
+      error => {
+        console.log('failed to login');
+      }
+    );
+  }
+
+
+  loggedIn() {
+    const token = localStorage.getItem('token');
+    return !!token;
+  }
+
+
+  logout() {
+    localStorage.removeItem('token');
+    console.log('\n logged out');
   }
 
 }
