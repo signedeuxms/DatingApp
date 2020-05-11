@@ -9,8 +9,8 @@
 
     <tbody>
       <tr *ngFor="let value of values">
-        <td *ngIf="!!value.name"> {{value.id}} </td>
-        <td *ngIf="!!value.name"> {{value.name}} </td>
+          <td *ngIf="!!value.name && !!value.id"> {{value.id}} </td>
+          <td *ngIf="!!value.name && !!value.id"> {{value.name}} </td>       
       </tr>
     </tbody>
   </table>
