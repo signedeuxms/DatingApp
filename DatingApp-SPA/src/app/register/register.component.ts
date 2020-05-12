@@ -14,7 +14,6 @@ export class RegisterComponent implements OnInit {
 
   model: any = {};
 
-  @Input() valuesFromHome: any;
   @Output() cancelRegisterOut = new EventEmitter();
 
   constructor( private authService: AuthService) { }
@@ -28,7 +27,8 @@ export class RegisterComponent implements OnInit {
         console.log('\n registration successful');
       },
       error => {
-        console.log(' \n => ' + error);
+        console.error(' \n RegisterComponent => failed to register => ' + error);
+        console.log(' \n RegisterComponent => failed to register => ' + error);
       }
     );
     console.log(this.model);

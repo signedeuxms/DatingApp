@@ -15,7 +15,7 @@
   <div *ngIf="registerMode" class="container">
     <div class="row justify-content-center">
       <div class="col-4">
-        <app-register [valuesFromHome]="values" 
+        <app-register 
             (cancelRegisterOut)="cancelRegisterMode($event)">
         </app-register>
       </div>
@@ -23,21 +23,3 @@
   </div>
 </div>
 
-
-<div>
-  <table *ngIf="values?.length >= 1">
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>NAME</th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <tr *ngFor="let value of values">
-          <td *ngIf="!!value.name && !!value.id"> {{value.id}} </td>
-          <td *ngIf="!!value.name && !!value.id"> {{value.name}} </td>       
-      </tr>
-    </tbody>
-  </table>
-</div>
