@@ -16,7 +16,7 @@ namespace DatingApp.API.Controllers
     // http:localhost:5000/api/auth/
     [Route("api/[controller]")]
     [ApiController]
-    public class AuthController :ControllerBase
+    public class AuthController: ControllerBase
     {
         private readonly IAuthRepository _repository;
         private readonly IConfiguration _config;

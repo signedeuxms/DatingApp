@@ -3,7 +3,7 @@
 
   <div class="container">
 
-    <a class="navbar-brand" href="#"> {{title}} </a>
+    <a class="navbar-brand" [routerLink]="['/home']"> {{title}} </a>
 
     <ul *ngIf="loggedIn()"  class="navbar-nav mr-auto">
       <li class="nav-item" routerLinkActive="active">
