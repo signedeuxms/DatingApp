@@ -23,3 +23,22 @@
   </div>
 </div>
 
+
+<div>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>NAME</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let value of values"> 
+          <td>{{value.id}}</td>
+          <td>{{value.name}}</td>
+        </tr>
+      </tbody>
+    </table>
+
+</div>
